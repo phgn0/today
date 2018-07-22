@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: "Lora", serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #212121;
+    background-color: #f5f5f5;
+}
+
+.page {
+    margin: 2em 10% 2em 5%;
+}
+
+.day {
+    display: flex;
+    margin: 2em 0;
+}
+
+.today_name {
+    font-family: "Satisfy", cursive;
+    font-size: 2.5rem !important;
+}
+
+.day_name {
+    width: 10rem;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0 5rem 0 0;
+    text-align: right;
+}
+
+.day_content {
+    flex-grow: 1;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list_item {
+    margin: 0.5em 0;
+    display: flex;
+}
+
+.list_item:first-child {
+    margin-top: 0;
+}
+
+.list_item_icon {
+    line-height: 1.1em; /* should be centered to the todo name, which is underlined (modifies line-height) */
+    margin-right: 0.5em;
+}
+
+.list_item_content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.list_item_name {
+    margin-right: 1em;
+    display: flex;
+}
+
+.list_item_actions {
+    margin-left: 0.5em;
+    font-size: 1em;
+    visibility: hidden;
+    display: flex;
+    line-height: 1.1em; /* should be centered to the todo name, which is underlined (modifies line-height) */
+}
+
+.list_item_content:hover > .list_item_name > .list_item_actions {
+    visibility: visible;
+}
+
+.list_item_actions > span {
+    margin-right: 0.3em;
+}
+
+.list_item_comment {
+    margin-left: 1.5em;
+}
+
+.input {
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    border: 0;
+}
+
+.new_todo {
+    width: 2em;
+}
+
+.fas,
+.far {
+    font-size: 1.2rem;
+}
+
+.unchecked {
+    color: #bcbcbc;
+}
+
+.underlined {
+    border-bottom: 0.15em solid #bcbcbc;
+    display: inline-block;
+    line-height: 1.1em;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 1.4em;
+    }
+    .page {
+        margin: 1em 1em;
+    }
+    .day {
+        margin: 1em 0;
+        flex-wrap: wrap;
+    }
+    .day_name {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+    .day_content {
+        margin-left: 1em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        font-size: 1.2em;
+    }
+}
