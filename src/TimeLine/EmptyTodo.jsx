@@ -17,7 +17,12 @@ function EmptyTodo({ addTask }) {
                     <div className="list_item_name_text new_todo active">
                         <EditableText
                             text=""
-                            onReturn={addTask}
+                            onReturn={(text) => {
+                                // prevent empty tasks
+                                if (text.trim() !== "") {
+                                    addTask(text)
+                                }
+                            }}
                             clearOnReturn
                         />
                     </div>

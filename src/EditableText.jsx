@@ -36,14 +36,15 @@ class EditableText extends Component {
     /** Called when the editor state (text,cursor) changes */
     onChange(editorState) {
         // save this new field state
-        this.setState({ editorState });
-
-        // call the debounced text update callback
-        if (this.textUpdateCallback) {
-            this.textUpdateCallback(
-                this.state.editorState.getCurrentContent().getPlainText()
-            );
-        }
+        this.setState({ editorState }, () => {
+            // wait until the new state is set
+            // then call the debounced text update callback
+            if (this.textUpdateCallback) {
+                this.textUpdateCallback(
+                    this.state.editorState.getCurrentContent().getPlainText()
+                );
+            }
+        });
     }
 
     /** Handle the users press of the return/enter key */

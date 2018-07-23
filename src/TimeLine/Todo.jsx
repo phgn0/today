@@ -17,6 +17,14 @@ function Todo({
     changeComment,
     changeTitle
 }) {
+    const onTitleUpdate = (newTitle) => {
+        if (newTitle.trim() !== "") {
+            changeTitle(newTitle);
+        } else {
+            deleteTask();
+        }
+    }
+
     return (
         <div className={"list_item " + (isCompleted ? "completed" : "active")}>
             <div className="list_item_icon">
@@ -32,7 +40,7 @@ function Todo({
                     >
                         <EditableText
                             text={title}
-                            textUpdatedDebounced={changeTitle}
+                            textUpdatedDebounced={onTitleUpdate}
                         />
                     </div>
                     <div className="list_item_actions">
