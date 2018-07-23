@@ -11,11 +11,11 @@ class TimeLine extends Component {
     constructor(props) {
         super(props);
 
-        this.days = this.generateNextWeek();
+        this.days = TimeLine.generateNextWeek();
     }
 
     /** Generate a list of the next 7 days, each with a weekday-name, and its date */
-    generateNextWeek() {
+    static generateNextWeek() {
         const week_words = [
             "Sunday",
             "Monday",
@@ -48,8 +48,10 @@ class TimeLine extends Component {
     render() {
         return (
             <main className="page">
-                {this.days.map(dayData => {
-                    return <DailyTodos key={dayData.date} {...dayData} />;
+                {this.days.map(({ date, dayName }) => {
+                    return (
+                        <DailyTodos key={date} date={date} dayName={dayName} />
+                    );
                 })}
             </main>
         );
