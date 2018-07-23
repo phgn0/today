@@ -1,7 +1,6 @@
 import {
     ADD_TASK,
     CHANGE_TASK_TITLE,
-    CHANGE_TASK_COMMENT,
     DELETE_TASK,
     TASK_TOGGLE_COMPLETED
 } from "./taskConstants.js";
@@ -39,8 +38,7 @@ export default function taskReducer(state = defaultState, action) {
                         ...(state.days[taskDate] || []),
                         {
                             title: taskTitle,
-                            isCompleted: false,
-                            comment: ""
+                            isCompleted: false
                         }
                     ]
                 }
@@ -64,12 +62,6 @@ export default function taskReducer(state = defaultState, action) {
             const { taskDate, taskId, newTitle } = action;
             return mergeTaskAttributes(state, taskDate, taskId, {
                 title: newTitle
-            });
-        }
-        case CHANGE_TASK_COMMENT: {
-            const { taskDate, taskId, newComment } = action;
-            return mergeTaskAttributes(state, taskDate, taskId, {
-                comment: newComment
             });
         }
         case TASK_TOGGLE_COMPLETED: {

@@ -4,17 +4,14 @@ import PropTypes from "prop-types";
 import EditableText from "../EditableText.jsx";
 
 /**
- * Represents a single todo/task item. It displays the tasks title, its status
- * (completed or not) and an optional comment, alongside actions to change its state.
+ * Represents a single todo/task item. It displays the tasks title and its status
+ * (completed or not), alongside actions to change its state.
  */
 function Todo({
     title,
-    comment,
     isCompleted,
     toggleCompleted,
     deleteTask,
-    addComment,
-    changeComment,
     changeTitle
 }) {
     const onTitleUpdate = (newTitle) => {
@@ -50,24 +47,8 @@ function Todo({
                                 onClick={deleteTask}
                             />
                         </span>
-                        <span>
-                            {!comment && (
-                                <i
-                                    className="far fa-comment"
-                                    onClick={addComment}
-                                />
-                            )}
-                        </span>
                     </div>
                 </div>
-                {comment && (
-                    <div className="list_item_comment">
-                        <EditableText
-                            text={comment}
-                            textUpdatedDebounced={changeComment}
-                        />
-                    </div>
-                )}
             </div>
         </div>
     );
@@ -75,8 +56,6 @@ function Todo({
 Todo.propTypes = {
     /** The task objective */
     title: PropTypes.string.isRequired,
-    /** An optional comment to explain the task further */
-    comment: PropTypes.string,
     /** Whether the task has been completed*/
     isCompleted: PropTypes.bool.isRequired,
     /** A function to change the task title*/
@@ -85,8 +64,6 @@ Todo.propTypes = {
     toggleCompleted: PropTypes.func.isRequired,
     /** A function to delete the task permanently */
     deleteTask: PropTypes.func.isRequired,
-    /** A function to add a comment to the task */
-    addComment: PropTypes.func.isRequired
 };
 
 export default Todo;

@@ -62,7 +62,6 @@ DailyTodos.propTypes = {
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
-            comment: PropTypes.string,
             isCompleted: PropTypes.bool.isRequired
         })
     ).isRequired,
