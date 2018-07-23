@@ -18,14 +18,15 @@ body {
 }
 
 .today_name {
-    font-family: "Satisfy", cursive;
-    font-size: 2.5rem !important;
+    font-family: "Satisfy" !important;
+    font-size: 4rem !important;
 }
 
 .day_name {
-    width: 10rem;
-    font-size: inherit;
-    font-weight: inherit;
+    font-family: "Libre Baskerville";
+    width: 15rem;
+    font-weight: 400;
+    font-size: 2rem;
     margin: 0 5rem 0 0;
     text-align: right;
     flex-shrink: 0;

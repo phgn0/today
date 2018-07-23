@@ -25,7 +25,7 @@ function DailyTodos({
 }) {
     return (
         <section className="day">
-            <h1 className="day_name today_name">{dayName}</h1>
+            <h1 className={"day_name " + (dayName === "Today" ? "today_name" : "")}>{dayName}</h1>
             <div className="day_content">
                 <ul className="list">
                     {tasks.map((taskData, taskId) => {
