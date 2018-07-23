@@ -22,7 +22,6 @@ export function deleteTask(taskDate, taskId) {
 }
 
 export function changeTaskTitle(taskDate, taskId, newTitle) {
-    console.log(newTitle);
     return {
         type: CHANGE_TASK_TITLE,
         taskDate,
