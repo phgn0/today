@@ -5,7 +5,7 @@ tasks in the browser localStorage, so you can close the website and reopen it la
 
 # How to use it
 
-Simply visit `today.phgn.de`, build it yourself with `yarn build` and open `./dist/index.html`, or start a dev server with `yarn start`.
+Simply visit `to-day.netlify.com/`, build it yourself with `yarn build` and open `./dist/index.html`, or start a dev server with `yarn start`.
 
 # How does it work
 
