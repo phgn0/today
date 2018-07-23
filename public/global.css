@@ -76,7 +76,6 @@ body {
 }
 
 .list_item_name {
-    margin-right: 1em;
     display: flex;
 }
 
@@ -116,6 +115,7 @@ body {
 
 .editable_text {
     word-break: break-all;
+    text-decoration: none;
 }
 
 .new_todo {
@@ -128,10 +128,7 @@ body {
     font-size: 1.2rem;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 1.4em;
-    }
+@media only screen and (max-width: 650px) {
     .page {
         margin: 1em 1em;
     }
@@ -140,6 +137,7 @@ body {
     }
     .day_name {
         text-align: left;
+        width: 10rem;
         margin: 0 2rem 1rem 0;
     }
     .day_content {
@@ -147,12 +145,27 @@ body {
     }
 }
 
-@media only screen and (max-width: 450px) {
-    body {
-        font-size: 1.2em;
-    }
+@media only screen and (max-width: 500px) {
     .day {
         display: block;
         margin-bottom: 3em;
+    }
+    .day_content {
+        margin: 0;
+    }
+    .day_name {
+        margin-bottom: 1rem;
+    }
+    .today_name {
+        margin-bottom: 0.75em !important;
+    }
+    .new_todo {
+        min-width: 3em;
+    }
+}
+
+@media only touch {
+    .list_item.active:hover > .list_item_icon {
+        visibility: hidden !important;
     }
 }
