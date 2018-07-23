@@ -15,10 +15,11 @@ function Todo({
     changeTitle
 }) {
     const onTitleUpdate = (newTitle) => {
-        if (newTitle.trim() !== "") {
-            changeTitle(newTitle);
-        } else {
+        if (newTitle.trim() == "") {
+            // delete task if we fully removed its title
             deleteTask();
+        } else {
+            changeTitle(newTitle);
         }
     }
 
