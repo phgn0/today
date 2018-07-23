@@ -79,6 +79,10 @@ body {
     display: flex;
 }
 
+.list_item_name_text {
+    /* padding-right: 0.5em; */
+}
+
 .list_item_name_text.active {
     border-bottom: 0.15em solid #bcbcbc;
     display: inline-block;
@@ -110,7 +114,6 @@ body {
 }
 
 .editable_text {
-    outline: none;
     word-break: break-all;
 }
 

@@ -110,11 +110,13 @@ class EditableText extends Component {
 
     render() {
         return (
-            <Editor
-                editorState={this.state.editorState}
-                onChange={this.onChange.bind(this)}
-                handleReturn={this.handleReturn.bind(this)}
-            />
+            <span className="editable_text">
+                <Editor
+                    editorState={this.state.editorState}
+                    onChange={this.onChange.bind(this)}
+                    handleReturn={this.handleReturn.bind(this)}
+                />
+            </span>
         );
     }
 }
