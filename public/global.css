@@ -28,6 +28,7 @@ body {
     font-weight: inherit;
     margin: 0 5rem 0 0;
     text-align: right;
+    flex-shrink: 0;
 }
 
 .day_content {
@@ -52,6 +53,16 @@ body {
 .list_item_icon {
     line-height: 1.1em; /* should be centered to the todo name, which is underlined (modifies line-height) */
     margin-right: 0.5em;
+    color: #bcbcbc;
+}
+
+.list_item.active > .list_item_icon {
+    visibility: hidden;
+}
+
+.list_item.active:hover > .list_item_icon {
+    visibility: visible;
+    color: #bcbcbc;
 }
 
 .list_item_content {
@@ -59,9 +70,23 @@ body {
     vertical-align: top;
 }
 
+.list_item.completed > .list_item_content {
+    color: #bcbcbc;
+}
+
 .list_item_name {
     margin-right: 1em;
     display: flex;
+}
+
+.list_item_name_text.active {
+    border-bottom: 0.15em solid #bcbcbc;
+    display: inline-block;
+    line-height: 1.1em;
+}
+.list_item_name_text.completed {
+    line-height: 1.1em;
+    border-bottom: 0.15em solid transparent;
 }
 
 .list_item_actions {
@@ -84,32 +109,19 @@ body {
     margin-left: 1.5em;
 }
 
-.input {
-    background-color: inherit;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    border: 0;
+.editable_text {
+    outline: none;
+    word-break: break-all;
 }
 
 .new_todo {
-    width: 2em;
+    min-width: 2em;
+    min-height: 1.1em;
 }
 
 .fas,
 .far {
     font-size: 1.2rem;
-}
-
-.unchecked {
-    color: #bcbcbc;
-}
-
-.underlined {
-    border-bottom: 0.15em solid #bcbcbc;
-    display: inline-block;
-    line-height: 1.1em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -121,19 +133,22 @@ body {
     }
     .day {
         margin: 1em 0;
-        flex-wrap: wrap;
     }
     .day_name {
         text-align: left;
-        margin-bottom: 1rem;
+        margin: 0 2rem 1rem 0;
     }
     .day_content {
         margin-left: 1em;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     body {
         font-size: 1.2em;
+    }
+    .day {
+        display: block;
+        margin-bottom: 3em;
     }
 }
